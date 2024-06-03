@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding" defaultCharsetForPropertiesFiles="UTF-8" addBOMForNewFiles="with BOM">
+    <file url="file://$PROJECT_DIR$/src/main/java/module-info.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/org/iesalandalus/programacion/reservashotel/MainApp.java" charset="ISO-8859-1" />
+    <file url="file://$PROJECT_DIR$/src/main/java/org/iesalandalus/programacion/reservashotel/controlador/Controlador.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/main/java/org/iesalandalus/programacion/reservashotel/libs" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/org/iesalandalus/programacion/reservashotel/libs/entrada-1.0.3.jar" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/org/iesalandalus/programacion/reservashotel/modelo/Modelo.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/main/java/org/iesalandalus/programacion/reservashotel/modelo/dominio/Doble.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/main/java/org/iesalandalus/programacion/reservashotel/modelo/dominio/Habitacion.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/main/java/org/iesalandalus/programacion/reservashotel/modelo/dominio/Huesped.java" charset="ISO-8859-1" />
+    <file url="file://$PROJECT_DIR$/src/main/java/org/iesalandalus/programacion/reservashotel/modelo/dominio/Regimen.java" charset="ISO-8859-1" />
+    <file url="file://$PROJECT_DIR$/src/main/java/org/iesalandalus/programacion/reservashotel/modelo/dominio/Reserva.java" charset="ISO-8859-1" />
+    <file url="file://$PROJECT_DIR$/src/main/java/org/iesalandalus/programacion/reservashotel/modelo/dominio/TipoHabitacion.java" charset="ISO-8859-1" />
+    <file url="file://$PROJECT_DIR$/src/main/java/org/iesalandalus/programacion/reservashotel/modelo/negocio/fichero/Huespedes.java" charset="ISO-8859-1" />
+    <file url="file://$PROJECT_DIR$/src/main/java/org/iesalandalus/programacion/reservashotel/modelo/negocio/memoria/Habitaciones.java" charset="ISO-8859-1" />
+    <file url="file://$PROJECT_DIR$/src/main/java/org/iesalandalus/programacion/reservashotel/modelo/negocio/memoria/Huespedes.java" charset="ISO-8859-1" />
+    <file url="file://$PROJECT_DIR$/src/main/java/org/iesalandalus/programacion/reservashotel/modelo/negocio/memoria/Reservas.java" charset="ISO-8859-1" />
+    <file url="file://$PROJECT_DIR$/src/main/java/org/iesalandalus/programacion/reservashotel/modelo/negocio/mongodb/Habitaciones.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/main/java/org/iesalandalus/programacion/reservashotel/modelo/negocio/mongodb/Huespedes.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/main/java/org/iesalandalus/programacion/reservashotel/modelo/negocio/mongodb/utilidades/MongoDB.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/main/java/org/iesalandalus/programacion/reservashotel/utilidades/Entrada.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/org/iesalandalus/programacion/reservashotel/vista/grafica/LanzadorVentanaPrincipal.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/main/java/org/iesalandalus/programacion/reservashotel/vista/grafica/controladores/ControladorAnadirHabitacion.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/org/iesalandalus/programacion/reservashotel/vista/grafica/controladores/ControladorAnadirHuesped.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/org/iesalandalus/programacion/reservashotel/vista/grafica/controladores/ControladorAnadirReserva.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/org/iesalandalus/programacion/reservashotel/vista/grafica/controladores/ControladorBuscarReserva.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/org/iesalandalus/programacion/reservashotel/vista/grafica/controladores/ControladorListarHabitaciones.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/org/iesalandalus/programacion/reservashotel/vista/grafica/controladores/ControladorListarHuespedes.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/org/iesalandalus/programacion/reservashotel/vista/grafica/controladores/ControladorListarReservas.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/org/iesalandalus/programacion/reservashotel/vista/grafica/controladores/ControladorMostrarHabitacion.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/org/iesalandalus/programacion/reservashotel/vista/grafica/controladores/ControladorMostrarHuesped.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/org/iesalandalus/programacion/reservashotel/vista/grafica/controladores/ControladorMostrarReserva.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/org/iesalandalus/programacion/reservashotel/vista/texto/Consola.java" charset="ISO-8859-1" />
+    <file url="file://$PROJECT_DIR$/src/main/java/org/iesalandalus/programacion/reservashotel/vista/texto/Opcion.java" charset="ISO-8859-1" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/VentanaPrincipal.fxml" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/org.iesalandalus.programacion.reservashotel.vista.grafica.recursos/estilos/estilos.css" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/org.iesalandalus.programacion.reservashotel.vista.grafica.recursos/imagenes/aula.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/org.iesalandalus.programacion.reservashotel.vista.grafica.recursos/imagenes/iconoAnadir.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/org.iesalandalus.programacion.reservashotel.vista.grafica.recursos/imagenes/iconoBuscar.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/org.iesalandalus.programacion.reservashotel.vista.grafica.recursos/imagenes/iconoListar.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/org.iesalandalus.programacion.reservashotel.vista.grafica.recursos/imagenes/logo-ies.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/org.iesalandalus.programacion.reservashotel.vista.grafica.recursos/imagenes/profesores.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/org.iesalandalus.programacion.reservashotel.vista.grafica.recursos/imagenes/reserva.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/org.iesalandalus.programacion.reservashotel.vista.grafica.recursos/vistas/AcercaDe.fxml" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/org.iesalandalus.programacion.reservashotel.vista.grafica.recursos/vistas/AnadirHabitacion.fxml" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/org.iesalandalus.programacion.reservashotel.vista.grafica.recursos/vistas/AnadirHuesped.fxml" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/org.iesalandalus.programacion.reservashotel.vista.grafica.recursos/vistas/AnadirReserva.fxml" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/org.iesalandalus.programacion.reservashotel.vista.grafica.recursos/vistas/BuscarReserva.fxml" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/org.iesalandalus.programacion.reservashotel.vista.grafica.recursos/vistas/ListarHabitaciones.fxml" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/org.iesalandalus.programacion.reservashotel.vista.grafica.recursos/vistas/ListarHuespedes.fxml" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/org.iesalandalus.programacion.reservashotel.vista.grafica.recursos/vistas/ListarReservas.fxml" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/org.iesalandalus.programacion.reservashotel.vista.grafica.recursos/vistas/MostrarHabitacion.fxml" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/org.iesalandalus.programacion.reservashotel.vista.grafica.recursos/vistas/MostrarHuesped.fxml" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/org.iesalandalus.programacion.reservashotel.vista.grafica.recursos/vistas/MostrarReserva.fxml" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/org.iesalandalus.programacion.reservashotel.vista.grafica.recursos/vistas/VentanaPrincipal.fxml" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/org.iesalandalus.programacion.reservashotel.vista.grafica.recursos/vistas/VentanaPrincipalOriginal.fxml" charset="UTF-8" />
+    <file url="PROJECT" charset="windows-1252" />
+  </component>
+</project>
