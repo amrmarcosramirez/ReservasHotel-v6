@@ -107,7 +107,7 @@ public abstract class Habitacion {
 
     @Override
     public String toString() {
-        return String.format("identificador = %s (%d-%d), precio habitación = %s€",
+        return String.format("identificador = %s (%d-%d), precio habitación = %s?",
                 this.identificador, this.planta, this.puerta, this.precio);
     }
 }

@@ -145,8 +145,10 @@ public class VistaTexto extends Vista {
             Habitacion habitacion = Consola.leerHabitacion();
             getControlador().insertar(habitacion);
             System.out.println("Habitaci�n insertada correctamente.");
-        } catch (OperationNotSupportedException | IllegalArgumentException | NullPointerException e) {
+        } catch (IllegalArgumentException | NullPointerException e) {
             System.out.println(e.getMessage());
+        } catch (OperationNotSupportedException e) {
+            throw new RuntimeException(e);
         }
     }
 
