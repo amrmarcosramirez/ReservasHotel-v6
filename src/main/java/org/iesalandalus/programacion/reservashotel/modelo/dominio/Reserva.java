@@ -217,6 +217,6 @@ public class Reserva {
                         "No registrado",
                 (!(this.checkOut==null))? getCheckOut().format(DateTimeFormatter.ofPattern(FORMATO_FECHA_HORA_RESERVA)):
                         "No registrado",
-                this.precio, 1);
+                this.precio, this.numeroPersonas);
     }
 }

@@ -8,6 +8,7 @@ module org.iesalandalus.programacion.reservashotel {
     requires org.mongodb.driver.core;
     requires java.logging;
     requires java.xml;
+    requires java.management;
     //requires entrada;
     //requires entrada;
     //requires entrada;

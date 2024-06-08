@@ -10,15 +10,13 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
 import javax.naming.OperationNotSupportedException;
+import java.nio.file.FileAlreadyExistsException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-import static org.iesalandalus.programacion.reservashotel.modelo.negocio.mongodb.utilidades.MongoDB.getDocumento;
-
-//import static com.sun.org.apache.xalan.internal.xsltc.runtime.output.TransletOutputHandlerFactory.DOM;
 
 public class Huespedes implements IHuespedes {
 
@@ -39,20 +37,20 @@ public class Huespedes implements IHuespedes {
     private Document DOM;
     private Element documentosHuespedes;
 
+
+    //Constructores
+    public Huespedes() {
+        DOM = UtilidadesXML.crearDomVacio(RAIZ);
+        documentosHuespedes = DOM.getDocumentElement();
+        this.coleccionHuespedes = new ArrayList<>();
+        comenzar();
+    }
+
     public static Huespedes getInstancia() {
         if (instancia == null) {
             instancia = new Huespedes();
         }
         return instancia;
-    }
-
-    //Constructores
-    public Huespedes() {
-
-        DOM = UtilidadesXML.crearDomVacio(RAIZ);
-        documentosHuespedes = DOM.getDocumentElement();
-        this.coleccionHuespedes = new ArrayList<>();
-        comenzar();
     }
 
     public void comenzar() {
@@ -80,8 +78,14 @@ public class Huespedes implements IHuespedes {
         //this.DOM = UtilidadesXML.xmlToDom(RUTA_FICHERO);
         //documentosHuespedes = DOM.getDocumentElement();
 
-        Document DOM = UtilidadesXML.xmlToDom(RUTA_FICHERO);
-        Element documentosHuespedes = DOM.getDocumentElement();
+
+
+        if(UtilidadesXML.xmlToDom(RUTA_FICHERO) != null){
+            this.DOM = UtilidadesXML.xmlToDom(RUTA_FICHERO);
+        }
+
+        documentosHuespedes = DOM.getDocumentElement();
+
 
         //listaClientes = DOM.getDocumentElement();
         NodeList listaNodos=documentosHuespedes.getChildNodes();
@@ -93,7 +97,9 @@ public class Huespedes implements IHuespedes {
             if(nodo.getNodeType() == Node.ELEMENT_NODE)
             {
                 Element clienteDOM = (Element) nodo;
+
                 coleccionHuespedes.add(elementToHuesped(clienteDOM));
+
             }
         }
     }
@@ -108,7 +114,8 @@ public class Huespedes implements IHuespedes {
 
         Huesped huesped = new Huesped(nombre.getTextContent(), dni,
                 correo.getTextContent(), telefono.getTextContent(),
-                LocalDate.parse(fechaNacimiento.getTextContent()));
+                LocalDate.parse(fechaNacimiento.getTextContent(),
+                        DateTimeFormatter.ofPattern(Huesped.FORMATO_FECHA)));
 
         return new Huesped(huesped);
 
@@ -118,6 +125,7 @@ public class Huespedes implements IHuespedes {
         //Document DOM;
         Element clienteDOM = DOM.createElement(HUESPED);
         clienteDOM.setAttribute(DNI, huesped.getDni());
+
 
         Element nombreE = DOM.createElement(NOMBRE);
         nombreE.setTextContent(huesped.getNombre());
@@ -135,19 +143,18 @@ public class Huespedes implements IHuespedes {
         clienteDOM.appendChild(telefonoE);
 
         Element fechaNacimientoE = DOM.createElement(FECHA_NACIMIENTO);
-        fechaNacimientoE.setTextContent(huesped.getFechaNacimiento().
-                format(DateTimeFormatter.ofPattern(String.valueOf(FORMATO_FECHA))));
+        fechaNacimientoE.setTextContent(huesped.getFechaNacimiento().format(FORMATO_FECHA));
         //dniE.setAttribute("tipo", "String");
         clienteDOM.appendChild(fechaNacimientoE);
+
 
         return clienteDOM;
         //listaClientes.appendChild(clienteDOM);
     }
 
-
     private void escribirXML(){
-        //Document DOM = UtilidadesXML.crearDomVacio(RAIZ);
-        //Element documentosHuespedes = DOM.getDocumentElement();
+        DOM = UtilidadesXML.crearDomVacio(RAIZ);
+        documentosHuespedes = DOM.getDocumentElement();
 
         List<Huesped> listaHuespedes = get();
         for (Huesped huesped : listaHuespedes) {

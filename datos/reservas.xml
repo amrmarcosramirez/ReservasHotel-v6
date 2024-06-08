@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Reservas>
+    <Reserva Planta="3" Puerta="5" dni="78325805H">
+        <Regimen>Pensión Completa</Regimen>
+        <FechaInicioReserva>10/06/2024</FechaInicioReserva>
+        <FechaFinReserva>15/06/2024</FechaFinReserva>
+        <Personas>2</Personas>
+        <FechaCheckin/>
+        <FechaCheckout/>
+        <Precio>650.0</Precio>
+    </Reserva>
+</Reservas>

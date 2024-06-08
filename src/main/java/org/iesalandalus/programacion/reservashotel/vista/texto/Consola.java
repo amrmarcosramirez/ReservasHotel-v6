@@ -5,6 +5,7 @@ import org.iesalandalus.programacion.reservashotel.modelo.dominio.*;
 //import org.iesalandalus.programacion.utilidades.Entrada;
 import org.iesalandalus.programacion.reservashotel.utilidades.Entrada;
 
+import javax.naming.OperationNotSupportedException;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;

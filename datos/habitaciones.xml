@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Habitaciones>
+    <Habitacion Identificador="12" Tipo="Simple">
+        <Planta>1</Planta>
+        <Puerta>2</Puerta>
+        <Precio>55.0</Precio>
+    </Habitacion>
+    <Habitacion Identificador="21" Tipo="Doble">
+        <Planta>2</Planta>
+        <Puerta>1</Puerta>
+        <Precio>77.0</Precio>
+        <Doble>
+            <CamasIndividuales>2</CamasIndividuales>
+            <CamasDobles>0</CamasDobles>
+        </Doble>
+    </Habitacion>
+    <Habitacion Identificador="35" Tipo="Triple">
+        <Planta>3</Planta>
+        <Puerta>5</Puerta>
+        <Precio>80.0</Precio>
+        <Banos>2</Banos>
+        <Triple>
+            <CamasIndividuales>2</CamasIndividuales>
+            <CamasDobles>1</CamasDobles>
+        </Triple>
+    </Habitacion>
+    <Habitacion Identificador="28" Tipo="Suite">
+        <Planta>2</Planta>
+        <Puerta>8</Puerta>
+        <Precio>100.0</Precio>
+        <Banos>1</Banos>
+        <Jacuzzi>sin Jacuzzi</Jacuzzi>
+    </Habitacion>
+</Habitaciones>

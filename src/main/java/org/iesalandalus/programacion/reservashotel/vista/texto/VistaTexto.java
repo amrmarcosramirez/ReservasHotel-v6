@@ -142,10 +142,10 @@ public class VistaTexto extends Vista {
         System.out.println(String.format(cadena, 0).replace("0", "-"));
 
         try {
-            //Habitacion habitacion = leerHabitacion();
-            getControlador().insertar(Consola.leerHabitacion());
+            Habitacion habitacion = Consola.leerHabitacion();
+            getControlador().insertar(habitacion);
             System.out.println("Habitaci�n insertada correctamente.");
-        } catch (OperationNotSupportedException|IllegalArgumentException|NullPointerException e) {
+        } catch (OperationNotSupportedException | IllegalArgumentException | NullPointerException e) {
             System.out.println(e.getMessage());
         }
     }

@@ -8,21 +8,22 @@ import org.iesalandalus.programacion.reservashotel.vista.FactoriaVista;
 import org.iesalandalus.programacion.reservashotel.vista.Vista;
 import org.iesalandalus.programacion.reservashotel.vista.texto.VistaTexto;
 
+import javax.naming.OperationNotSupportedException;
+
 public class MainApp {
 
 
     public static void main(String[] args) {
         System.out.println("Programa para la Gestión de Hoteles IES Al-Ándalus");
 
-        try {
+        //try {
             IModelo modelo = new Modelo(procesarArgumentosFuenteDatos(args));
             Vista vista = procesarArgumentosVista(args);
             Controlador controlador = new Controlador(modelo, vista);
             controlador.comenzar();
-
-        } catch (IllegalArgumentException|NullPointerException e) {
+       /* } catch (IllegalArgumentException | NullPointerException e) {
             System.out.println(e.getMessage());
-        }
+        }*/
     }
 
    //
@@ -37,7 +38,7 @@ public class MainApp {
             } else if (argumento.equalsIgnoreCase("-fdmongodb")) {
                 fuenteDatos = FactoriaFuenteDatos.MONGODB;
             } else if (argumento.equalsIgnoreCase("-fdfichero")) {
-                fuenteDatos = FactoriaFuenteDatos.MEMORIA;
+                fuenteDatos = FactoriaFuenteDatos.FICHERO;
             }
         }
         return fuenteDatos;

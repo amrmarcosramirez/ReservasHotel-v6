@@ -3,6 +3,7 @@ package org.iesalandalus.programacion.reservashotel.modelo.negocio.memoria;
 import org.iesalandalus.programacion.reservashotel.modelo.dominio.*;
 import org.iesalandalus.programacion.reservashotel.modelo.negocio.*;
 
+import javax.management.modelmbean.RequiredModelMBean;
 import javax.naming.OperationNotSupportedException;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -49,16 +50,14 @@ public class Habitaciones implements IHabitaciones {
         List<Habitacion> copiaHabitaciones = new ArrayList<>();
         for (Iterator<Habitacion> it = get().iterator();it.hasNext();){
             Habitacion habitacion = it.next();
-            if(habitacion.getClass().isInstance(tipoHabitacion)) {
-                if(habitacion instanceof Simple){
-                    copiaHabitaciones.add(new Simple((Simple) habitacion));
-                }else if(habitacion instanceof Doble){
-                    copiaHabitaciones.add(new Doble((Doble) habitacion));
-                }else if(habitacion instanceof Triple){
-                    copiaHabitaciones.add(new Triple((Triple) habitacion));
-                }else {
-                    copiaHabitaciones.add(new Suite((Suite) habitacion));
-                }
+            if(habitacion instanceof Simple && tipoHabitacion.equals(TipoHabitacion.SIMPLE)){
+                copiaHabitaciones.add(new Simple((Simple) habitacion));
+            }else if(habitacion instanceof Doble && tipoHabitacion.equals(TipoHabitacion.DOBLE)){
+                copiaHabitaciones.add(new Doble((Doble) habitacion));
+            }else if(habitacion instanceof Triple  && tipoHabitacion.equals(TipoHabitacion.TRIPLE)){
+                copiaHabitaciones.add(new Triple((Triple) habitacion));
+            }else if(habitacion instanceof Suite  && tipoHabitacion.equals(TipoHabitacion.SUITE)){
+                copiaHabitaciones.add(new Suite((Suite) habitacion));
             }
         }
         return copiaHabitaciones;

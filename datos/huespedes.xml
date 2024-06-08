@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Huespedes>
+    <Huesped Dni="53418535T">
+        <Nombre>Patricia</Nombre>
+        <Correo>asfdfs@gmail.com</Correo>
+        <Telefono>666777888</Telefono>
+        <FechaNacimiento>10/02/1986</FechaNacimiento>
+    </Huesped>
+    <Huesped Dni="78325805H">
+        <Nombre>Andys</Nombre>
+        <Correo>sdfsf@gmail.com</Correo>
+        <Telefono>666555444</Telefono>
+        <FechaNacimiento>21/03/1986</FechaNacimiento>
+    </Huesped>
+</Huespedes>

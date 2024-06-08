@@ -20,6 +20,9 @@ public enum Regimen {
     public double getIncrementoPrecio() {
         return incrementoPrecio;
     }
+    public String getCadenaAMostrar() {
+        return cadenaAMostrar;
+    }
 
     //Método toString
     @Override

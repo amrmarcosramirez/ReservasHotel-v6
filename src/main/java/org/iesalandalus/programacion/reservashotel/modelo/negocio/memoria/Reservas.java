@@ -90,7 +90,14 @@ public class Reservas implements IReservas {
         List<Reserva> reservasHabitacion = new ArrayList<>();
         for (Iterator<Reserva> it = get().iterator(); it.hasNext();) {
             Reserva reserva = it.next();
-            if (reserva.getHabitacion().getClass().isInstance(tipoHabitacion)) {
+
+            if (reserva.getHabitacion() instanceof Simple && tipoHabitacion == TipoHabitacion.SIMPLE) {
+                reservasHabitacion.add(new Reserva(reserva));
+            } else if (reserva.getHabitacion() instanceof Doble && tipoHabitacion == TipoHabitacion.DOBLE) {
+                reservasHabitacion.add(new Reserva(reserva));
+            } else if (reserva.getHabitacion() instanceof Triple && tipoHabitacion == TipoHabitacion.TRIPLE) {
+                reservasHabitacion.add(new Reserva(reserva));
+            } else if (reserva.getHabitacion() instanceof Suite && tipoHabitacion == TipoHabitacion.SUITE) {
                 reservasHabitacion.add(new Reserva(reserva));
             }
         }
