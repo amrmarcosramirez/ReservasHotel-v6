@@ -1,32 +1,40 @@
 package org.iesalandalus.programacion.reservashotel.vista.grafica.controladores;
 
+import javafx.beans.property.Property;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.collections.transformation.SortedList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.geometry.Pos;
+import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
+import javafx.util.Callback;
 import org.iesalandalus.programacion.reservashotel.controlador.Controlador;
 import org.iesalandalus.programacion.reservashotel.modelo.dominio.*;
 import org.iesalandalus.programacion.reservashotel.vista.Vista;
 import org.iesalandalus.programacion.reservashotel.vista.grafica.VistaGrafica;
 
+import javax.swing.*;
 import java.time.format.DateTimeFormatter;
+import java.util.Comparator;
 import java.util.List;
+import java.util.function.Predicate;
 
+import static java.util.Comparator.comparing;
+import static javafx.scene.text.TextAlignment.*;
 import static org.iesalandalus.programacion.reservashotel.modelo.dominio.Huesped.FORMATO_FECHA;
 import static org.iesalandalus.programacion.reservashotel.modelo.dominio.TipoHabitacion.*;
+
 /*
 import org.iesalandalus.programacion.reservasaulas.mvc.controlador.IControlador;
 import org.iesalandalus.programacion.reservasaulas.mvc.modelo.dominio.Aula;
 */
 
 public class ControladorListarHabitaciones {
-
 
 	@FXML TableColumn<Habitacion, String> tcIdentificador;
 	@FXML TableColumn<Habitacion, String> tcPrecio;
@@ -42,17 +50,20 @@ public class ControladorListarHabitaciones {
 	List<Habitacion> listaHabitaciones;
 	private ObservableList<Habitacion> listaHabitacionVisible;
 	private Habitacion registro;
-
 	private String filtro;
 
 
 	public void inicializa() {
 		this.tvHabitaciones.setItems(FXCollections.observableArrayList(
 				VistaGrafica.getInstancia().getControlador().getHabitaciones()));
+		initialize();
 	}
 
 	@FXML
 	private void initialize() {
+
+		//inicializa();
+
 		tcIdentificador.setCellValueFactory(habitacion -> new SimpleStringProperty(habitacion.getValue().getIdentificador()));
 		tcPrecio.setCellValueFactory(habitacion -> new SimpleStringProperty(Double.toString(habitacion.getValue().getPrecio())));
 		tcTipoHabitacion.setCellValueFactory(habitacion -> new SimpleStringProperty(getTipoHabitacionString(habitacion.getValue())));
@@ -62,10 +73,12 @@ public class ControladorListarHabitaciones {
 		tcCamasDobles.setCellValueFactory(habitacion -> new SimpleStringProperty(Integer.toString(getCamasDoblesInt(habitacion.getValue()))));
 		tcJacuzzi.setCellValueFactory(habitacion -> new SimpleStringProperty(getCamasJacuzziString(habitacion.getValue())));
 
-		//ChoiceBox<String> tipoHabitacion = new ChoiceBox<>();
-		this.tipoHabitacion.setItems(FXCollections.observableArrayList(SIMPLE.name(), DOBLE.name(),
+		//this.tipoHabitacion = new ChoiceBox<>();
+		this.tipoHabitacion.setItems(FXCollections.observableArrayList("TODAS", SIMPLE.name(), DOBLE.name(),
 				TRIPLE.name(), SUITE.name()));
-
+		//this.tipoHabitacion.valueProperty().addListener((observable, oldValue, newValue) -> muestraIcono());
+		this.tipoHabitacion.setOnAction(this::muestraIcono);
+		this.tipoHabitacion.getSelectionModel().selectFirst();
 
 		this.filtro = "";
 		listaHabitacionVisible = FXCollections.observableArrayList();
@@ -73,7 +86,7 @@ public class ControladorListarHabitaciones {
 		this.listaHabitaciones = VistaGrafica.getInstancia().getControlador().getHabitaciones();
 		this.refrescarTabla();
 	}
-	
+
 	@FXML
 	private void aceptar() {
 		Stage escena = (Stage) btAceptar.getScene().getWindow();
@@ -86,14 +99,12 @@ public class ControladorListarHabitaciones {
 		this.registro = this.tvHabitaciones.getSelectionModel().getSelectedItem();
 	}
 
-
 	private void refrescarTabla()
 	{
 		this.registro = null;
 		this.tvHabitaciones.getSelectionModel().select(null);
-
 		this.listaHabitacionVisible.clear();
-		this.listaHabitaciones = VistaGrafica.getInstancia().getControlador().getHabitaciones();
+		//this.listaHabitaciones = VistaGrafica.getInstancia().getControlador().getHabitaciones();
 
 		for(Habitacion p:this.listaHabitaciones)
 		{
@@ -103,10 +114,12 @@ public class ControladorListarHabitaciones {
 			}
 			//this.listaPersonasVisible.add(p);
 		}
-
 		this.tvHabitaciones.refresh();
+		tcIdentificador.setSortType(TableColumn.SortType.ASCENDING);
+		tvHabitaciones.getSortOrder().add(tcIdentificador);
+		tvHabitaciones.sort();
+		this.tvHabitaciones.getSelectionModel().selectFirst();
 	}
-
 
 	private int getBaniosInt(Habitacion habitacion) {
 		int numBanios = 0;
@@ -159,5 +172,35 @@ public class ControladorListarHabitaciones {
 			tipoHab = "Suite";;
 		}
 		return tipoHab;
+	}
+
+	private void muestraIcono(ActionEvent event) {
+		String seleccion = tipoHabitacion.getValue();
+		if (seleccion.equals(SIMPLE.name())){
+			//listaHabitacionVisible = FXCollections.observableArrayList();
+			//this.tvHabitaciones.setItems(listaHabitacionVisible);
+			this.listaHabitaciones = VistaGrafica.getInstancia().getControlador().getHabitaciones(SIMPLE);
+			this.refrescarTabla();
+		}else if (seleccion.equals(DOBLE.name())) {
+			//listaHabitacionVisible = FXCollections.observableArrayList();
+			//this.tvHabitaciones.setItems(listaHabitacionVisible);
+			this.listaHabitaciones = VistaGrafica.getInstancia().getControlador().getHabitaciones(DOBLE);
+			this.refrescarTabla();
+		}else if (seleccion.equals(TRIPLE.name())) {
+			//listaHabitacionVisible = FXCollections.observableArrayList();
+			//this.tvHabitaciones.setItems(listaHabitacionVisible);
+			this.listaHabitaciones = VistaGrafica.getInstancia().getControlador().getHabitaciones(TRIPLE);
+			this.refrescarTabla();
+		}else if (seleccion.equals(SUITE.name())) {
+			//listaHabitacionVisible = FXCollections.observableArrayList();
+			//this.tvHabitaciones.setItems(listaHabitacionVisible);
+			this.listaHabitaciones = VistaGrafica.getInstancia().getControlador().getHabitaciones(SUITE);
+			this.refrescarTabla();
+		}else {
+			//listaHabitacionVisible = FXCollections.observableArrayList();
+			//this.tvHabitaciones.setItems(listaHabitacionVisible);
+			this.listaHabitaciones = VistaGrafica.getInstancia().getControlador().getHabitaciones();
+			this.refrescarTabla();
+		}
 	}
 }

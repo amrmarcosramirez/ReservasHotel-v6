@@ -211,8 +211,7 @@ public class ControladorVentanaPrincipal {
     private void crearAnadirHuesped() throws IOException {
         if (anadirHuesped == null) {
 
-            /*FXMLLoader cargadorAnadirHuesped = new FXMLLoader(
-                    LocalizadorRecursos.class.getResource("vistas/AnadirHuesped.fxml"));*/
+            //FXMLLoader cargadorAnadirHuesped = new FXMLLoader(LocalizadorRecursos.class.getResource("/vistas/AnadirHuesped.fxml"));
             FXMLLoader cargadorAnadirHuesped = new FXMLLoader(LocalizadorRecursos.class.getResource("/org.iesalandalus.programacion.reservashotel.vista.grafica.recursos/vistas/AnadirHuesped.fxml"));
             Parent raizAnadirHuesped = cargadorAnadirHuesped.load();
             Scene escenaAnadirHuesped = new Scene(raizAnadirHuesped);
@@ -234,8 +233,7 @@ public class ControladorVentanaPrincipal {
     private void crearListarHuespedes() throws IOException {
         if (listarHuespedes == null) {
             listarHuespedes = new Stage();
-           /* FXMLLoader cargadorListarHuespedes = new FXMLLoader(
-                    LocalizadorRecursos.class.getResource("vistas/ListarHuespedes.fxml"));*/
+           //FXMLLoader cargadorListarHuespedes = new FXMLLoader(LocalizadorRecursos.class.getResource("/vistas/ListarHuespedes.fxml"));
             FXMLLoader cargadorListarHuespedes = new FXMLLoader(LocalizadorRecursos.class.getResource("/org.iesalandalus.programacion.reservashotel.vista.grafica.recursos/vistas/ListarHuespedes.fxml"));
             Parent raizListarHuespedes = cargadorListarHuespedes.load();
             cListarHuespedes = cargadorListarHuespedes.getController();
@@ -254,8 +252,8 @@ public class ControladorVentanaPrincipal {
     private void crearMostrarHuesped(Huesped huesped) throws IOException {
         if (mostrarHuesped == null) {
             mostrarHuesped = new Stage();
-            FXMLLoader cargadorMostrarHuesped = new FXMLLoader(
-                    LocalizadorRecursos.class.getResource("/org.iesalandalus.programacion.reservashotel.vista.grafica.recursos/vistas/MostrarHuesped.fxml"));
+            //FXMLLoader cargadorMostrarHuesped = new FXMLLoader(LocalizadorRecursos.class.getResource("/vistas/MostrarHuesped.fxml"));
+            FXMLLoader cargadorMostrarHuesped = new FXMLLoader(LocalizadorRecursos.class.getResource("/org.iesalandalus.programacion.reservashotel.vista.grafica.recursos/vistas/MostrarHuesped.fxml"));
             VBox raizMostrarHuesped = cargadorMostrarHuesped.load();
             cMostrarHuesped = cargadorMostrarHuesped.getController();
             cMostrarHuesped.setHuesped(huesped);
@@ -290,8 +288,8 @@ public class ControladorVentanaPrincipal {
     private void crearListarHabitaciones() throws IOException {
         if (listarHabitaciones == null) {
             listarHabitaciones = new Stage();
-            FXMLLoader cargadorListarHabitaciones = new FXMLLoader(
-                    LocalizadorRecursos.class.getResource("/org.iesalandalus.programacion.reservashotel.vista.grafica.recursos/vistas/ListarHabitaciones.fxml"));
+            //FXMLLoader cargadorListarHabitaciones = new FXMLLoader(LocalizadorRecursos.class.getResource("/vistas/ListarHabitaciones.fxml"));
+            FXMLLoader cargadorListarHabitaciones = new FXMLLoader(LocalizadorRecursos.class.getResource("/org.iesalandalus.programacion.reservashotel.vista.grafica.recursos/vistas/ListarHabitaciones.fxml"));
             VBox raizListarHabitaciones = cargadorListarHabitaciones.load();
             cListarHabitaciones = cargadorListarHabitaciones.getController();
             //cListarAulas.setControladorMVC(controladorMVC);

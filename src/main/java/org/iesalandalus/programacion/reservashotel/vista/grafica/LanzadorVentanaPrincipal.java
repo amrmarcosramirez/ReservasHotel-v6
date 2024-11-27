@@ -24,11 +24,11 @@ public class LanzadorVentanaPrincipal extends Application {
     public void start(Stage escenarioPrincipal) {
         try {
             //FXMLLoader fxmlLoader = new FXMLLoader(LocalizadorRecursos.class.getResource("/vistas/VentanaPrincipal.fxml"));
-            FXMLLoader fxmlLoader = new FXMLLoader(LocalizadorRecursos.class.getResource("/org.iesalandalus.programacion.reservashotel.vista.grafica.recursos/vistas/VentanaPrincipal.fxml"));
-            Parent raiz = fxmlLoader.load();
+            //FXMLLoader fxmlLoader = new FXMLLoader(LocalizadorRecursos.class.getResource("/org.iesalandalus.programacion.reservashotel.vista.grafica.recursos/vistas/VentanaPrincipal.fxml"));
+            //Parent raiz = fxmlLoader.load();
 
-            /*URL url = Paths.get("src/main/resources/VentanaPrincipal.fxml").toUri().toURL();
-            Parent raiz = FXMLLoader.load(url);*/
+            URL url = Paths.get("src/main/resources/org.iesalandalus.programacion.reservashotel.vista.grafica.recursos/vistas/VentanaPrincipal.fxml").toUri().toURL();
+            Parent raiz = FXMLLoader.load(url);
             Scene escena = new Scene(raiz);
             escenarioPrincipal.setTitle("Gestión de Hoteles IES Al-Ándalus");
             escenarioPrincipal.setOnCloseRequest(e -> confirmarSalida(escenarioPrincipal, e));

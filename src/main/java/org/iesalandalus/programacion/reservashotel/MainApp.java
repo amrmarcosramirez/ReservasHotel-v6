@@ -31,7 +31,7 @@ public class MainApp {
 
     private static FactoriaFuenteDatos procesarArgumentosFuenteDatos(String[] args) {
         //FactoriaFuenteDatos fuenteDatos = FactoriaFuenteDatos.MONGODB;
-        FactoriaFuenteDatos fuenteDatos = FactoriaFuenteDatos.MEMORIA;
+        FactoriaFuenteDatos fuenteDatos = FactoriaFuenteDatos.MONGODB;
         for (String argumento : args) {
             if (argumento.equalsIgnoreCase("-fdmemoria")) {
                 fuenteDatos = FactoriaFuenteDatos.MEMORIA;
@@ -45,8 +45,8 @@ public class MainApp {
     }
 
     private static Vista procesarArgumentosVista(String[] args) {
-        //Vista fuenteVista = FactoriaVista.GRAFICA.crear();
-        Vista fuenteVista = FactoriaVista.TEXTO.crear();
+        //Vista fuenteVista = FactoriaVista.TEXTO.crear();
+       Vista fuenteVista = FactoriaVista.GRAFICA.crear();
         for (String argumento : args) {
             if (argumento.equalsIgnoreCase("-vTexto")) {
                 fuenteVista = FactoriaVista.TEXTO.crear();

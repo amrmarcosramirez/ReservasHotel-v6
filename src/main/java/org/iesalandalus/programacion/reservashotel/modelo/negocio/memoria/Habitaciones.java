@@ -109,7 +109,7 @@ public class Habitaciones implements IHabitaciones {
         Objects.requireNonNull(habitacion, "ERROR: No se puede borrar una habitación nula.");
         int indice = coleccionHabitaciones.indexOf(habitacion);
         if (indice == -1) {
-            throw new OperationNotSupportedException("ERROR: No existe ningún aula con ese nombre.");
+            throw new OperationNotSupportedException("ERROR: No existe ninguna habitación como la inidcada.");
         } else {
             coleccionHabitaciones.remove(indice);
         }

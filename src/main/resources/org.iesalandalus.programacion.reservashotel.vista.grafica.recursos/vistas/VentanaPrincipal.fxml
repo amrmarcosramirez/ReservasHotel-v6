@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
@@ -15,7 +14,7 @@
 <?import javafx.scene.paint.RadialGradient?>
 <?import javafx.scene.paint.Stop?>
 
-<VBox prefHeight="400.0" prefWidth="900.0" styleClass="vbox" stylesheets="@../estilos/estilos.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.iesalandalus.programacion.reservashotel.vista.grafica.controladores.ControladorVentanaPrincipal">
+<VBox styleClass="vbox" stylesheets="@../estilos/estilos.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.iesalandalus.programacion.reservashotel.vista.grafica.controladores.ControladorVentanaPrincipal">
 	<children>
 		<MenuBar>
 			<menus>
@@ -26,7 +25,7 @@
 				</Menu>
 			</menus>
 		</MenuBar>
-      <HBox alignment="CENTER" prefHeight="356.0" prefWidth="361.0" spacing="30.0">
+      <HBox alignment="CENTER" prefHeight="400.0" prefWidth="900.0" spacing="30.0">
          <children>
       		<TitledPane collapsible="false" prefHeight="361.0" prefWidth="250.0" text="Huéspedes">
       			<content>

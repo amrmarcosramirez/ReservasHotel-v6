@@ -9,6 +9,7 @@ module org.iesalandalus.programacion.reservashotel {
     requires java.logging;
     requires java.xml;
     requires java.management;
+    requires java.desktop;
     //requires entrada;
     //requires entrada;
     //requires entrada;
